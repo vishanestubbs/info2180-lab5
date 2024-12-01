@@ -7,9 +7,8 @@ $username = 'lab5_user';
 $password = 'password123';
 $dbname = 'world';
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-$country= $_GET['country'];
-$lookup= $_GET['lookup'];
-
+$country = filter_input(INPUT_GET, 'country', FILTER_SANITIZE_SPECIAL_CHARS);
+$lookup = filter_input(INPUT_GET, 'lookup', FILTER_SANITIZE_SPECIAL_CHARS);
 if ($lookup== "cities") {
   $stmt = $conn->query("SELECT cities.name,cities.district,cities.population FROM cities JOIN countries ON cities.country_code = countries.code WHERE countries.name LIKE '%$country%' ");
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
