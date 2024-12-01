@@ -1,6 +1,5 @@
 /* Add your own styles */
 
-/* world.css */
 
 /* General body styling */
 body {
@@ -40,6 +39,9 @@ main {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    gap:10px;
+    
+
 }
 
 #controls label {
@@ -56,7 +58,7 @@ main {
     margin-right: 1rem;
 }
 
-#controls button {
+#controls #lookup {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -66,9 +68,24 @@ main {
     cursor: pointer;
 }
 
-#controls button:hover {
+#controls #lookup:hover {
     background-color: #45a049;
 }
+
+#controls #lookup_city {
+    background-color: rgb(5, 80, 35);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#controls #lookup_city:hover {
+    background-color: rgb(17, 125, 82);
+}
+
 
 /* Table styling */
 table {
